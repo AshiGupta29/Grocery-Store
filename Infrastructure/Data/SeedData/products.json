@@ -1,0 +1,152 @@
+[
+  {
+    "Name": "Banana",
+    "Description": "Relish the soft, buttery texture of Robusta bananas that are light green and have a great fragrance and taste. The stalks of Robustas are thick and rigid.",
+    "ProductCategoryId": 1,
+    "Quantity": 4,
+    "ImageUrl": "images/products/Banana.jpg",
+    "Price": 56,
+    "Discount": 27,
+    "ProductSpecification" : "Quantity - 1 Dozen,Expiry - 3 Days"
+  },
+  {
+    "Name": "Pomegranate",
+    "Description": "With ruby color and an intense floral, sweet-tart flavor, the pomegranate delivers both taste and beauty.",
+    "ProductCategoryId": 1,
+    "Quantity": 10,
+    "ImageUrl": "images/products/Pomegranate.jpg",
+    "Price": 160,
+    "Discount": 37,
+    "ProductSpecification" : "Weight - 1kg ,Expiry - 6 Days"
+  },
+  {
+    "Name": "Tomato",
+    "Description": "Local tomatoes are partly sour and partly sweet and contain many seeds inside which are edible. The red colour present in tomatoes is due to lycopene, an anti-oxidant.",
+    "ProductCategoryId": 1,
+    "Quantity": 12,
+    "ImageUrl": "images/products/Tomato.jpg",
+    "Price": 18,
+    "Discount": 17,
+    "ProductSpecification" : "Weight - 1 kg,Expiry - 3 Days"
+  },
+  {
+    "Name": "Amul - Fresh Toned Milk",
+    "Description": "Amul Taaza fresh toned milk is an excellent quality milk from Gujarat. It can be consumed directly from the pack. No need to boil, it has virtually zero bacteria. No need to refrigerate till open.",
+    "ProductCategoryId": 2,
+    "Quantity": 10,
+    "ImageUrl": "images/products/Milk.jpg",
+    "Price": 32,
+    "Discount": 0,
+    "ProductSpecification" : "Weight - 1 Packet,Expiry - 2 Days"
+  },
+  {
+    "Name": "Amul Butter",
+    "Description": "Amul is synonymous with Butter in India.Several Generation of Indian consumers have grown up with the taste of Amul Butter for the six decades.Utterly Butterly Delicious taste of Amul Butter is must on breakfast table of almost every Indian Household.",
+    "ProductCategoryId": 2,
+    "Quantity": 11,
+    "ImageUrl": "images/products/Butter.jpg",
+    "Price": 266,
+    "Discount": 2,
+    "ProductSpecification" : "Weight - 500 g,Expiry - 2 months after opening."
+  },
+  {
+    "Name": "Bread - Brown",
+    "Description": "Healthy n Natural daily bread",
+    "ProductCategoryId": 2,
+    "Quantity": 0,
+    "ImageUrl": "images/products/Bread.jpg",
+    "Price": 45,
+    "Discount": 2,
+    "ProductSpecification" : "Quantity - 1 Packet,Expiry - 3 Days after opening"
+  },
+  {
+    "Name": "Coco-Cola",
+    "Description": "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as the best-known brand in the world.",
+    "ProductCategoryId": 3,
+    "Quantity": 7,
+    "ImageUrl": "images/products/cococola.jpg",
+    "Price": 95,
+    "Discount": 5,
+    "ProductSpecification" : "Quantity - 1 l,Expiry - 3 Days after opening"
+  },
+  {
+    "Name": "Catch Shikanji Masala",
+    "Description": "Catch Shikanji masala is made from natural spring water. It is a truly refreshing way to beat the heat. Shikanji /Shikanjavi is an Indian lemonade made with freshwater, lemon juice and simple spices. It prevents heat stroke and also is a great refreshing & appetizing drink.",
+    "ProductCategoryId": 3,
+    "Quantity": 2,
+    "ImageUrl": "images/products/Catch.jpg",
+    "Price": 10,
+    "Discount": 1,
+    "ProductSpecification" : "Quantity - 200 ml,Expiry - 3 Days after opening"
+  },
+  {
+    "Name": "Lays- Potato Chips",
+    "Description": "When it comes to great taste, simplicity is key and Lay’s Classic Salted Potato Chips is here to prove it It all starts with the highest quality farm-grown potatoes, cooked to crunchy perfection and sprinkled with microlite salt.",
+    "ProductCategoryId": 4,
+    "Quantity": 30,
+    "ImageUrl": "images/products/Lays.jpg",
+    "Price": 20,
+    "Discount": 0,
+    "ProductSpecification" : "Weight - 40 g,Expiry - 2 Days after opening"
+  },
+  {
+    "Name": "Aloo Bhujia",
+    "Description": "Bikaneri Aloo Bhujia Is Prepared From Potatoes And Special Spice, This Snack Has A Nice Highly Spiced Flavour. The Tastes Enormous With Any Food You Have. Carry A Small Suitable Pack To Your Office And Have Something To Munch On When Hungry.",
+    "ProductCategoryId": 4,
+    "Quantity": 1,
+    "ImageUrl": "images/products/Bicano.jpg",
+    "Price": 55,
+    "Discount": 4,
+    "ProductSpecification" : "Weight - 200g ,Expiry - 3 Days after opening"
+  },
+  {
+    "Name": "Chicken -Nuggets",
+    "Description": "Completely continental food and mostly used a snack, the finished result is delicious and crispy in texture. It's properly packed and frozen to ensure that it retains its taste and holds the crisp once fried.",
+    "ProductCategoryId": 5,
+    "Quantity": 3,
+    "ImageUrl": "images/products/Chicken.jpg",
+    "Price": 314.50,
+    "Discount": 2,
+    "ProductSpecification" : "Weight - 500 g,Expiry - 2 Days"
+  },
+  {
+    "Name": "Eggs",
+    "Description": "Eggs are one of the common food items in most of the households. From breakfast to dinner, eggs are indulged in various ways. Poached, boiled, fried; we all have our own favourite choices. ",
+    "ProductCategoryId": 5,
+    "Quantity": 6,
+    "ImageUrl": "images/products/Egg.jpg",
+    "Price": 229,
+    "Discount": 2,
+    "ProductSpecification" : "Quantity - 30 pcs,Expiry - 1 Days "
+  },
+  {
+    "Name": "Fish",
+    "Description": "Found in the muddy bottoms, this ubiquitously loved fish is full of flavour. Don't get fooled by the flattened appearance, the White Pomfret is rich in taste and has a soft flaky texture..",
+    "ProductCategoryId": 5,
+    "Quantity": 4,
+    "ImageUrl": "images/products/Fish.jpg",
+    "Price": 539,
+    "Discount": 31,
+    "ProductSpecification" : "Weight - 250 g,Expiry - 3 Days after opening"
+  },
+  {
+    "Name": "Toor-Dal",
+    "Description": "The 5-step process ensures that Tata Sampann grains are uniform and of premium quality, giving you an all-natural, authentic taste.",
+    "ProductCategoryId": 6,
+    "Quantity": 5,
+    "ImageUrl": "images/products/Dal.jpg",
+    "Price": 93,
+    "Discount": 11,
+    "ProductSpecification" : "Weight - 1 kg,Expiry - 6 months after opening"
+  },
+  {
+    "Name": "Mustard Oil",
+    "Description": "Fortune Premium Kachi Ghani Pure Mustard Oil, traditionally extracted from the first press of mustard seeds, comes with a high pungency level and strong aroma.",
+    "ProductCategoryId": 6,
+    "Quantity": 0,
+    "ImageUrl": "images/products/oil.jpg",
+    "Price": 71.64,
+    "Discount": 26,
+    "ProductSpecification" : "Quntity- 500 ml,Expiry - 18 months after opening"
+  }
+]

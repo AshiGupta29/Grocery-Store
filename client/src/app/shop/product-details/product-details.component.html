@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row" *ngIf="product">
+        <div class="col-6">
+            <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="w-100" />
+        </div>
+        <div class="col-6 mt-5">
+            <h2>{{ product.name }}</h2>
+            <div>
+                <div class="product-price">
+                    <span class="me-2" style="display: inline-block">
+                        <p *ngIf="product.discount > 0"
+                            class="original-price text-decoration-line-through" style="font-size: 2em;">
+                            {{ product.price | currency : "INR" : "symbol" }}
+                        </p>
+                        <p *ngIf="product.discount == 0" class="original-price" style="font-size: 2em;">
+                            {{ product.price | currency : "INR" : "symbol" }}
+                        </p>
+                    </span>
+                    <span class="discounted-price" style="display: inline-block" *ngIf="product.discount > 0">
+                        <p style="font-size: 2em;">
+                            {{
+                               getDiscountedPrice(product) 
+                            | currency : "INR" : "symbol"
+                            }}
+                        </p>
+                    </span>
+                </div>
+                <div class="my-2" *ngIf="product.discount > 0">
+                    <span class="lable lable-danger me-2" style="color: red">FLAT {{ product.discount }}% Off</span>
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+                <h5 *ngIf=" (accountService.currentUser$ | async) === null && product.quantity === 0" style="color: red">
+                    OUT OF STOCK
+                </h5>
+            </div>
+    
+    
+           <div *ngIf=" (accountService.currentUser$ | async) !== null">
+            <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
+                You have {{quantityInBasket}} of this item in your basket
+            </h5>
+    
+            <div class="d-flex justify-content-start align-items-center">
+                <div *ngIf="product.quantity > 0">
+                    <i 
+                     class="fa fa-minus-circle text-success me-2" 
+                     style="cursor: pointer; font-size: 1.5em"
+                     (click)="decrementQuantity()"
+                    ></i>
+                    <span class="font-weight-bold" style="font-size: 1.5em">
+                       {{quantity}}
+                    </span>
+                    <i 
+                     class="fa fa-plus-circle text-success ms-2" 
+                     style="cursor: pointer; font-size: 1.5em"
+                     (click)="incrementQuantity()"
+                    ></i>
+                </div>
+                <h5 *ngIf="product.quantity === 0" class="font-weight-bold text-danger ms-3 mt-2">
+                    OUT OF STOCK
+                </h5>
+                <button *ngIf="product.quantity > 0" 
+                    class="btn btn-outline-primary ms-4"
+                    (click)="updateBasket()"
+                    [disabled]="quantity === quantityInBasket"
+                >{{buttonText}} </button>
+            </div>
+           </div>
+            <div class="row mt-4">
+                <h4>Description</h4>
+                <p>{{ product.description }}</p>
+                <h4 *ngIf="product.productSpecification.length > 0" >Specification</h4>
+                <p>{{ product.productSpecification }}</p>
+    
+                <div *ngIf="reviews" class="ms-0">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div ng-controller="reviewController">
+                                <h4 class="pdt-title">Customer Reviews</h4>
+                                <hr>
+                                <div class="alert alert-danger" *ngIf="reviews.length === 0">
+                                    No reviews yet.
+                                </div>
+                                <div class="col-sm-12" *ngFor="let review of reviews">
+                                    <blockquote class="row">
+                                      <h4 class="col-sm-6">{{getUsernameFromEmail(review.userEmail)}}</h4>
+                                      <h6 class="col-sm-12"><small><i>{{review.datePosted | date:'yyyy-MM-dd'}}</i></small></h6>
+                                      <p class="col-sm-12">{{review.description}}</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <form [formGroup]="reviewForm" (ngSubmit)="postReview()"> 
+                <div  class="form-group" *ngIf=" (accountService.currentUser$ | async) !== null">
+                    <h4>Add Reviews</h4>
+                    <textarea formControlName="review2" id="review2" class="form-control mb-2" aria-label="With textarea" placeholder="Review"></textarea>
+                    <button type="submit" class="btn btn-outline-success mb-3">Post</button>
+                  </div>
+              </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    

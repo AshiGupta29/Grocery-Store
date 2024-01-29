@@ -1,0 +1,141 @@
+<div >
+  <button class="btn btn-outline-success me-2" (click)="openMainModal(content)">Most Ordered Products</button>
+</div>
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-6">
+        <form [formGroup]="addProduct" (ngSubmit)="onSubmit(addProduct)">
+            <div class="form-group">
+              <label for="name">Product Name</label>
+              <input type="text" class="form-control mb-2" id="name" formControlName="name">
+              <div class="text-danger" *ngIf="addProduct.get('name')?.invalid && (addProduct.get('name')?.dirty || addProduct.get('name')?.touched)">
+                <div *ngIf="addProduct.get('name')?.errors?.['required']">Product Name is required.</div>
+                <div *ngIf="addProduct.get('name')?.errors?.['maxLength']">Product Name cannot exceed 100 characters.</div>
+                <div *ngIf="addProduct.get('name')?.errors?.['pattern']">Product Name can only contain alphanumeric characters.</div>
+              </div>
+              
+              <label for="description">Description</label>
+              <textarea  type="text" class="form-control mb-2" id="description" formControlName="description"></textarea>
+              <div class="text-danger" *ngIf="addProduct.get('description')?.invalid && (addProduct.get('description')?.dirty || addProduct.get('description')?.touched)">
+                <div *ngIf="addProduct.get('description')?.errors?.['required']">Description is required.</div>
+                <div *ngIf="addProduct.get('description')?.errors?.['maxLength']">Description cannot exceed 255 characters.</div>
+                <div *ngIf="addProduct.get('description')?.errors?.['pattern']">Description can only contain alphanumeric characters.</div>
+              </div>
+              
+              <label for="productCategory">Category</label>
+              <select type="text" class="form-control mb-2" id="productCategory" formControlName="productCategory">
+                <option>Fruits and Vegetables</option>
+                <option>Bakery, Cakes and Dairy</option>
+                <option>Beverages</option>
+                <option>Snacks</option>
+                <option>Eggs, Meat and Fish</option>
+                <option>Foodgrains, Oil and Masala</option>
+              </select>
+              <div class="text-danger" *ngIf="addProduct.get('productCategory')?.invalid && (addProduct.get('productCategory')?.dirty || addProduct.get('productCategory')?.touched)">
+                <div *ngIf="addProduct.get('productCategory')?.errors?.['required']">Category is required.</div>
+                <div *ngIf="addProduct.get('productCategory')?.errors?.['maxLength']">Category cannot exceed 100 characters.</div>
+                <div *ngIf="addProduct.get('productCategory')?.errors?.['pattern']">Category can only contain alphanumeric characters.</div>
+              </div>
+              
+              <label for="quantity">Available Quantity</label>
+              <input type="number" class="form-control mb-2" id="quantity" formControlName="quantity">
+              <div class="text-danger" *ngIf="addProduct.get('quantity')?.invalid && (addProduct.get('quantity')?.dirty || addProduct.get('quantity')?.touched)">
+                <div *ngIf="addProduct.get('quantity')?.errors?.['required']">Quantity is required.</div>
+                <div *ngIf="addProduct.get('quantity')?.errors?.['pattern']">Quantity can only contain numeric characters.</div>
+              </div>
+              
+              <label for="imageUrl">Image Url</label>
+              <input type="text" class="form-control mb-2" id="imageUrl" formControlName="imageUrl">
+              <div class="text-danger" *ngIf="addProduct.get('imageUrl')?.invalid && (addProduct.get('imageUrl')?.dirty || addProduct.get('imageUrl')?.touched)">
+                <div *ngIf="addProduct.get('imageUrl')?.errors?.['required']">Image Url is required.</div>
+                <div *ngIf="addProduct.get('imageUrl')?.errors?.['pattern']">JPG or PNG format only.</div>
+              </div>
+              
+              <label for="price">Price</label>
+              <input type="text" class="form-control mb-2" id="price" formControlName="price">
+              <div class="text-danger" *ngIf="addProduct.get('price')?.invalid && (addProduct.get('price')?.dirty || addProduct.get('price')?.touched)">
+                <div *ngIf="addProduct.get('price')?.errors?.['required']">Price is required.</div>
+                <div *ngIf="addProduct.get('price')?.errors?.['pattern']">Invalid Price Format.Please enter a valid price, such as 10 or 10.0</div>
+              </div>
+              
+              <label for="discount">Discount</label>
+              <input type="text" class="form-control mb-2" id="discount" formControlName="discount">
+              <div class="text-danger" *ngIf="addProduct.get('discount')?.invalid && (addProduct.get('discount')?.dirty || addProduct.get('discount')?.touched)">
+                <div *ngIf="addProduct.get('discount')?.errors?.['pattern']">Invalid Discount Format.Please enter a valid discount, such as 10 or 10.0</div>
+              </div>
+              
+              <label for="productSpecification">Product Specification</label>
+              <input type="text" class="form-control mb-2" id="productSpecification" formControlName="productSpecification">
+              <div class="text-danger" *ngIf="addProduct.get('productSpecification')?.invalid && (addProduct.get('productSpecification')?.dirty || addProduct.get('productSpecification')?.touched)">
+                <div *ngIf="addProduct.get('productSpecification')?.errors?.['maxLength']">Product Specification cannot exceed 100 characters.</div>
+              </div>
+              
+            </div>
+            <div class="d-grid">
+                <div class="d-flex justify-content-start gap-2">
+                  <button [disabled]="addProduct.invalid" class="btn btn-lg btn-success mt-3 mb-3"  type="submit">Add</button>
+                  <button class="btn btn-lg btn-secondary mt-3 mb-3" (click)="resetForm()" type="reset">Reset</button>
+                </div>
+              </div>
+              
+        </form>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+  <!-- Main Modal -->
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Five Most Ordered Products</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body me-2">
+  <!-- Month and Date Picker -->
+  <form [formGroup]="productForm" (ngSubmit)="onDateSelect(productForm)">
+    <div class="form-group">
+      <label>Month</label>
+      <input type="number" class="form-control mb-2" id="month" placeholder="Month" formControlName="month" />
+      <div class="text-danger" *ngIf="
+          productForm.get('month')?.invalid &&
+          (productForm.get('month')?.dirty || productForm.get('month')?.touched)
+        ">
+        <div *ngIf="productForm.get('month')?.errors?.['required']">
+          Month is required.
+        </div>
+        <div *ngIf="productForm.get('month')?.errors?.['pattern']">
+          Please enter a valid Month.
+        </div>
+      </div>
+      
+      <label>Year</label>
+      <input type="number" class="form-control mb-2" id="year" placeholder="Year" formControlName="year" />
+      <div class="text-danger" *ngIf="
+          productForm.get('year')?.invalid &&
+          (productForm.get('year')?.dirty || productForm.get('year')?.touched)
+        ">
+        <div *ngIf="productForm.get('year')?.errors?.['required']">
+          Year is required.
+        </div>
+        <div *ngIf="productForm.get('year')?.errors?.['pattern']">
+          Please enter a valid Year.
+        </div>
+      </div>
+
+    <div class="modal-footer">
+      <button id="view" formControlName="view" type="submit" class="btn btn-outline-success"
+         [disabled]="productForm.invalid">
+        View
+      </button>
+    </div>
+    </div>
+  </form>
+
+  <div *ngIf="productNames">
+    <ul>
+      <li style="font-weight: bold; font-size: 1.5em;" *ngFor="let product of productNames">{{ product }}</li>
+    </ul>
+  </div>
+  <div *ngIf="productNames?.length === 0" style="font-weight: bold; font-size: 1.5em;">
+    No product ordered.
+  </div>
+</div>
+</ng-template>

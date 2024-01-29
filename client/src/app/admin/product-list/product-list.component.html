@@ -1,0 +1,167 @@
+<div class="card h-100 shadow-sm" *ngIf="product">
+  <div class="image position-relative" style="cursor: pointer">
+    <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="img-fluid" />
+    <div class="d-flex align-items-center justify-content-center hover-overlay">
+      <button class="btn btn-success me-2" (click)="open(content)">Edit</button>
+      <button class="btn btn-success fa-sharp fa-solid fa-trash me-2" (click)="deleteProduct(product.id)"></button>
+    </div>
+  </div>
+
+  <div class="card-body d-flex flex-column">
+    <a href="" class="text-decoration-none">
+      <h6 class="text-uppercase">
+        {{ product.name }}
+      </h6>
+    </a>
+    <span class="mb-2">MRP: {{ product.price | currency : "INR" : "symbol" }}</span>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Product update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form *ngIf="product" [formGroup]="productForm" (ngSubmit)="onSubmit(product.id,productForm)">
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" class="form-control mb-2" id="name" formControlName="name" />
+        <div class="text-danger" *ngIf="
+            productForm.get('name')?.invalid &&
+            (productForm.get('name')?.dirty || productForm.get('name')?.touched)
+          ">
+          <div *ngIf="productForm.get('name')?.errors?.['required']">
+            Product Name is required.
+          </div>
+          <div *ngIf="productForm.get('name')?.errors?.['maxLength']">
+            Product Name cannot exceed 100 characters.
+          </div>
+          <div *ngIf="productForm.get('name')?.errors?.['pattern']">
+            Product Name can only contain alphanumeric characters.
+          </div>
+        </div>
+
+        <label for="description">Description</label>
+        <textarea type="text" class="form-control mb-2" id="description" formControlName="description"></textarea>
+        <div class="text-danger" *ngIf="
+            productForm.get('description')?.invalid &&
+            (productForm.get('description')?.dirty ||
+              productForm.get('description')?.touched)
+          ">
+          <div *ngIf="productForm.get('description')?.errors?.['required']">
+            Description is required.
+          </div>
+          <div *ngIf="productForm.get('description')?.errors?.['maxLength']">
+            Description cannot exceed 255 characters.
+          </div>
+          <div *ngIf="productForm.get('description')?.errors?.['pattern']">
+            Description can only contain alphanumeric characters.
+          </div>
+        </div>
+
+        <label for="productCategory">Category</label>
+        <select type="text" class="form-control mb-2" id="productCategory" formControlName="productCategory">
+          <option>Fruits and Vegetables</option>
+          <option>Bakery, Cakes and Dairy</option>
+          <option>Beverages</option>
+          <option>Snacks</option>
+          <option>Eggs, Meat and Fish</option>
+          <option>Foodgrains, Oil and Masala</option>
+        </select>
+        <div class="text-danger" *ngIf="
+            productForm.get('productCategory')?.invalid &&
+            (productForm.get('productCategory')?.dirty ||
+              productForm.get('productCategory')?.touched)
+          ">
+          <div *ngIf="productForm.get('productCategory')?.errors?.['required']">
+            Category is required.
+          </div>
+          <div *ngIf="productForm.get('productCategory')?.errors?.['maxLength']">
+            Category cannot exceed 100 characters.
+          </div>
+          <div *ngIf="productForm.get('productCategory')?.errors?.['pattern']">
+            Category can only contain alphanumeric characters.
+          </div>
+        </div>
+
+        <label for="quantity">Available Quantity</label>
+        <input type="number" class="form-control mb-2" id="quantity" formControlName="quantity" />
+        <div class="text-danger" *ngIf="
+            productForm.get('quantity')?.invalid &&
+            (productForm.get('quantity')?.dirty ||
+              productForm.get('quantity')?.touched)
+          ">
+          <div *ngIf="productForm.get('quantity')?.errors?.['required']">
+            Quantity is required.
+          </div>
+          <div *ngIf="productForm.get('quantity')?.errors?.['pattern']">
+            Quantity can only contain numeric characters.
+          </div>
+        </div>
+
+        <label for="imageUrl">Image Url</label>
+        <input type="text" class="form-control mb-2" id="imageUrl" formControlName="imageUrl" />
+        <div class="text-danger" *ngIf="
+            productForm.get('imageUrl')?.invalid &&
+            (productForm.get('imageUrl')?.dirty ||
+              productForm.get('imageUrl')?.touched)
+          ">
+          <div *ngIf="productForm.get('imageUrl')?.errors?.['required']">
+            Image Url is required.
+          </div>
+          <div *ngIf="productForm.get('imageUrl')?.errors?.['pattern']">
+            JPG or PNG format only.
+          </div>
+        </div>
+
+        <label for="price">Price</label>
+        <input type="text" class="form-control mb-2" id="price" formControlName="price" />
+        <div class="text-danger" *ngIf="
+            productForm.get('price')?.invalid &&
+            (productForm.get('price')?.dirty ||
+              productForm.get('price')?.touched)
+          ">
+          <div *ngIf="productForm.get('price')?.errors?.['required']">
+            Price is required.
+          </div>
+          <div *ngIf="productForm.get('price')?.errors?.['pattern']">
+            Invalid Price Format.Please enter a valid price, such as 10 or 10.0
+          </div>
+        </div>
+
+        <label for="discount">Discount</label>
+        <input type="text" class="form-control mb-2" id="discount" formControlName="discount" />
+        <div class="text-danger" *ngIf="
+            productForm.get('discount')?.invalid &&
+            (productForm.get('discount')?.dirty ||
+              productForm.get('discount')?.touched)
+          ">
+          <div *ngIf="productForm.get('discount')?.errors?.['pattern']">
+            Invalid Discount Format.Please enter a valid discount, such as 10 or
+            10.0
+          </div>
+        </div>
+
+        <label for="productSpecification">Product Specification</label>
+        <input type="text" class="form-control mb-2" id="productSpecification" formControlName="productSpecification" />
+        <div class="text-danger" *ngIf="
+            productForm.get('productSpecification')?.invalid &&
+            (productForm.get('productSpecification')?.dirty ||
+              productForm.get('productSpecification')?.touched)
+          ">
+          <div *ngIf="productForm.get('productSpecification')?.errors?.['maxLength']">
+            Product Specification cannot exceed 100 characters.
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" *ngIf="product" class="btn btn-outline-success"
+          (click)="modal.close('Save click')" [disabled]="productForm.invalid">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>

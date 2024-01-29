@@ -1,0 +1,97 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Banana.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Banana.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Bicano.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Bicano.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Biscuit.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Biscuit.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Bread.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Bread.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Butter.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Butter.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Cake.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Cake.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Catch.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Catch.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Chicken.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Chicken.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Cococola.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Cococola.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Dal.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Dal.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Egg.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Egg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Fish.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Fish.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Lays.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Lays.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Milk.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Milk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Oil.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Oil.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Paneer.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Paneer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Pomegranate.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Pomegranate.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\Tomato.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Tomato.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pranav\\Desktop\\Ashi\\nagarro\\Projects\\GroceryStore\\API\\wwwroot\\images\\products\\fanta.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\fanta.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.API.props",
+      "PackagePath": "build\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.API.props",
+      "PackagePath": "buildMultiTargeting\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.API.props",
+      "PackagePath": "buildTransitive\\API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
