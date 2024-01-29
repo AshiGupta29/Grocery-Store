@@ -23,14 +23,3 @@ Requirements- .net 6,node js
    and then write: ping
    if it returns pong it means that the connection is established.
 
-
-ASSUMPTIONS MADE:
-
-1. In Dashboard for logged-in user, point g., it was requested to "generate a unique order id and notify it to user." Accordingly, here to inform the customer that "order has been placed successfully," i've utilised toaster notification.
-
-
-2. I took a fixed data of categories that the admin can select from by dropdown button instead of creating new categories every time, even if they are already present in the database, which will eventually lead to ambiguity. It is stated in the Dashboard for Admin Users, point e. add new product, that only the admin can add new products.
-
-3. In Bonus question 1, customer reviews are obtained in the form of comments rather than ratings because in the original question it was simply stated that we must obtain customer reviews.
-
-4. As I used a modal to display names in Bonus Question 2, I fetched product names to view the five most ordered products.
